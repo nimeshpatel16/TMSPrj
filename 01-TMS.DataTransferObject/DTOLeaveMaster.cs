@@ -10,7 +10,6 @@ namespace TMS.DataTransferObject
 {
     public class DTOLeaveMaster
     {
-
         public Int32 LeaveId { get; set; }
         public Int32 ResourceID { get; set; }
         public Int32 ProjectID { get; set; }    
