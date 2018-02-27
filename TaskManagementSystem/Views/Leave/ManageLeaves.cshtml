@@ -1,0 +1,18 @@
+﻿@model TaskManagementSystem.Models.CustomClass.LeaveModel
+
+@{
+    ViewBag.Title = "ManageLeaves";
+    Layout = "~/Views/Shared/_DashboardLayoutPage.cshtml";
+}
+
+<h2>ManageLeaves</h2>
+
+<div>
+    <h4>Manage Leaves</h4>
+    <hr />
+    
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

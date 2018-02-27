@@ -1,0 +1,118 @@
+﻿@model IEnumerable<TaskManagementSystem.Models.CustomClass.LeaveModel>
+
+@{
+    //ViewBag.Title = "BindManageLeaves";
+    Layout = "~/Views/Shared/_DashboardLayoutPage.cshtml";
+}
+@Styles.Render("~/Content/dataTables")
+@*<h2>BindManageLeaves</h2>*@
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div class="container">
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <div class="panel-title pull-left">
+                <h3> Leave List</h3>
+            </div>
+            <div class="panel-title pull-right"><h3><a class="btn btn-primary" href='@Url.Action("AddLeaves","Leave")'>Add Leave</a></h3></div>
+            <div class="clearfix"></div>
+        </div>
+        </br>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="table_id">
+
+                <thead>
+                    <tr>
+                        <th>  @Html.DisplayNameFor(model => model.ResourceID)</th>
+                        <th> @Html.DisplayNameFor(model => model.StartDate)</th>
+                        <th> @Html.DisplayNameFor(model => model.EndDate)</th>
+                        <th>  @Html.DisplayNameFor(model => model.Reason)</th>
+                        <th>  @Html.DisplayNameFor(model => model.LeaveType)</th>
+                        <th class="text-center">  Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+            {
+                <tr class="gradeX">
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResourceID)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Reason)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LeaveType)
+                    </td>
+
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+    }
+                </tbody>
+            </table>
+            @section scripts {
+
+                @Scripts.Render("~/bundles/dataTables")
+
+                <script type="text/javascript">
+
+                    $(document).ready(function () {
+                        $('#table_id').DataTable(
+                            {
+                                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+                                
+                            }
+                        );
+                    });
+
+                </script>
+            }
+            @*<div id="pagers">
+
+        </div>
+        <div id="pager" style="position: none;">
+            <form>
+                <img src="@Url.Content("~/Content/images/first.png")" class="first" />
+                <img src="@Url.Content("~/Content/images/prev.png")" class="prev" />
+                <input type="text" class="pagedisplay" />
+                <img src="@Url.Content("~/Content/images/next.png")" class="next" />
+                <img src="@Url.Content("~/Content/images/last.png")" class="last" />
+                <select class="pagesize">
+                    <option selected="selected" value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                </select>
+            </form>
+        </div>*@
+
+        </div>
+    </div>
+</div>
+
+@*<script type="text/javascript" charset="utf8">
+    $(document).ready(function () {
+        var sada = "fsdf";
+              
+    } );
+</script>*@
+

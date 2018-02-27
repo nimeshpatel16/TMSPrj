@@ -1,0 +1,114 @@
+﻿@model TaskManagementSystem.Models.CustomClass.LeaveModel
+
+@{
+    ViewBag.Title = "AddLeaves";
+    Layout = "~/Views/Shared/_DashboardLayoutPage.cshtml";
+}
+
+<h2>AddLeaves</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Apply Leave</h4>
+                <hr />
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">User Name :</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.ResourceName, "", new { @class = "form-control", id = "txtName", maxlength = "100" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Leave Type :</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("ddlLeaveType", new List<SelectListItem>
+                                        {
+                                        new SelectListItem{ Text="Personal", Value = "6" },
+                                        new SelectListItem{ Text="Official", Value = "5" },
+                                        new SelectListItem{ Text="Sick", Value = "7" },
+                                        }, new { @class = "selectpicker form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Start Date :</label>
+                        <div class="col-md-5">
+                            @Html.TextBoxFor(m => m.StartDate, "", new { @class = "form-control ui-datepicker-calendar", id = "datepicker", maxlength = "100", @readonly = true })
+                        </div>
+                        <div class="col-md-5">
+                            @Html.DropDownList("ddlStartDate", new List<SelectListItem>
+                                            {
+                                            new SelectListItem{ Text="FullDay", Value = "1" },
+                                            new SelectListItem{ Text="1st Half", Value = "2" },
+                                            new SelectListItem{ Text="2nd Half", Value = "3" },
+                                            }, new { @class = "selectpicker form-control" })
+                            @Html.ValidationMessageFor(m => m.StartDate)
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">End Date :</label>
+                        <div class="col-md-5">
+                            @Html.TextBoxFor(m => m.EndDate, "", new { @class = "form-control ui-datepicker-calendar", id = "txtEndDate", maxlength = "100", @readonly = true })
+                        </div>
+                        <div class="col-md-5">
+
+                            @Html.DropDownList("ddlEndDate", new List<SelectListItem>
+                                            {
+                                            new SelectListItem{ Text="FullDay", Value = "1" },
+                                            new SelectListItem{ Text="1st Half", Value = "2" },
+                                            new SelectListItem{ Text="2nd Half", Value = "3" },
+                                            }, new { @class = "selectpicker form-control" })
+                            @Html.ValidationMessageFor(m => m.EndDate)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Reason For Leave:</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(m => m.Reason, new { @class = "form-control", id = "txttitle", maxlength = "500" })
+                            @Html.ValidationMessageFor(m => m.Reason)
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div>
+
+
+                        @*<input type="submit" class="btn btn-primary right" value="Submit"/>
+                            @*<button type="button" class="btn btn-primary right">Submit</button> &nbsp;*@
+                        @*<button type="button" class="btn btn-primary right">Cancel</button>*@
+                        <input type="submit" value="Create" class="btn btn-primary" formaction="SaveData" formmethod="post" />
+                        <input type="submit" value="Clear" class="btn btn-primary" formaction="ClearData" formmethod="post" />
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+    
+}
+
+<div>
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>
