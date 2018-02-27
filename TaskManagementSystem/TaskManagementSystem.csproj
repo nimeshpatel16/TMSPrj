@@ -217,6 +217,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\AutoMapper.dll" />
     <Content Include="bin\TaskManagementSystem.dll" />
     <Content Include="bin\TaskManagementSystem.pdb" />
     <Content Include="Content\bootstrap.css" />
