@@ -204,6 +204,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeaveController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,6 +221,7 @@
     <Content Include="bin\AutoMapper.dll" />
     <Content Include="bin\TaskManagementSystem.dll" />
     <Content Include="bin\TaskManagementSystem.pdb" />
+    <Content Include="Content\bootstrap-multiselect.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\sb-admin.css" />
@@ -461,6 +463,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\bootstrap-multiselect.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -689,6 +692,7 @@
     <Content Include="Views\Leave\_AddLeaves.cshtml" />
     <Content Include="Views\Leave\GetGameListing.cshtml" />
     <Content Include="Views\Leave\ViewLyubomir.cshtml" />
+    <Content Include="Views\Resource\AddResource.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

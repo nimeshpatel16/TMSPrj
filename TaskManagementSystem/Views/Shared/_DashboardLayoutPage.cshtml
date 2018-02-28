@@ -22,10 +22,14 @@
     <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
 
     <link href="~/Content/DataTables/css/jquery.dataTables_themeroller.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
+
 
     <script src="~/Scripts/jquery-1.12.4.js"></script>
 
     <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/bootstrap-multiselect.js"></script>
+
     
    
 
@@ -59,6 +63,17 @@
                     <ul class="sidenav-second-level collapse" id="collapseLeave">
                         <li>
                             @Html.ActionLink("Leaves", "AddLeaves", "Leave")
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="AddResource">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseResource" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-user"></i>
+                        <span class="nav-link-text">Resource</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseResource">
+                        <li>
+                            @Html.ActionLink("Resource", "AddResource", "Resource")
                         </li>
                     </ul>
                 </li>
@@ -221,10 +236,15 @@
         <script src="~/Content/js/sb-admin-charts.min.js"></script>
 
 
-        <script src="~/Scripts/jquery-1.12.4.js"></script>
-       
-        <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+        <link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
 
+
+        <script src="~/Scripts/jquery-1.12.4.js"></script>
+
+        <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+        <script src="~/Scripts/bootstrap-multiselect.js"></script>
+
+       
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

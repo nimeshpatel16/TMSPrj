@@ -1,0 +1,170 @@
+﻿@model TaskManagementSystem.Models.CustomClass.ResourceModel
+
+@{
+    ViewBag.Title = "AddResource";
+    Layout = "~/Views/Shared/_DashboardLayoutPage.cshtml";
+}
+
+<h2>AddResource</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Add/Update Resource Details Leave</h4>
+                <hr />
+            </div>
+            <div class="panel-body">
+
+                @*<div class="form-horizontal">*@
+                @*<h4>ResourceModel</h4>
+                    <hr />*@
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">First Name :</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Last Name :</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Email :</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Role :</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("ddlRole", new List<SelectListItem>
+                                                    {
+                                                    new SelectListItem{ Text="Admin", Value = "1" },
+                                                    new SelectListItem{ Text="Lead", Value = "2" },
+                                                    new SelectListItem{ Text="Developer", Value = "3" },
+                                                    new SelectListItem{ Text="QA", Value = "4" },
+                                                    new SelectListItem{ Text="HR", Value = "5" },
+                                                    new SelectListItem{ Text="NetworkAdmin", Value = "6" },
+                                                    new SelectListItem{ Text="UX Expert", Value = "7" },
+                                                    new SelectListItem{ Text="Support", Value = "8" },
+                                                    new SelectListItem{ Text="NetworkSupport", Value = "9" },
+                                                    }, new { @class = "selectpicker form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Project :</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("ddlProject", new List<SelectListItem>
+                                                    {
+                                                    new SelectListItem{ Text="Smart", Value = "1" },
+                                                    new SelectListItem{ Text="QA", Value = "2" },
+                                                    new SelectListItem{ Text="SESM", Value = "3" },
+                                                    new SelectListItem{ Text="PALM", Value = "4" },
+                                                    }, new { multiple = "multiple"  })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">DOB :</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.DOB, "", new { @class = "form-control ui-datepicker-calendar", id = "datepicker", maxlength = "100", @readonly = true })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Date Of Joining :</label>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.JoiningDate, "", new { @class = "form-control ui-datepicker-calendar", id = "datepicker", maxlength = "100", @readonly = true })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Total Yearly Leave :</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TotalLeave, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TotalLeave, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-md-2 text-left">Carry Forwarded Leave :</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CarryForwardedLeave, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CarryForwardedLeave, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+                @*</div>*@
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script src="~/Scripts/bootstrap-multiselect.js"></script>
+<link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger;
+
+        $('#ddlProject').multiselect({
+           
+            includeSelectAllOption: true
+
+            });
+        
+           
+
+      
+    });
+</script>
+}
