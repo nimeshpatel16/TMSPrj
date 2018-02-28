@@ -80,12 +80,14 @@
                         <label class="control-label col-md-2 text-left">Project :</label> 
                         <div class="col-md-10">
                             @Html.DropDownList("ddlProject", new List<SelectListItem>
-                                                    {
-                                                    new SelectListItem{ Text="Smart", Value = "1" },
-                                                    new SelectListItem{ Text="QA", Value = "2" },
-                                                    new SelectListItem{ Text="SESM", Value = "3" },
-                                                    new SelectListItem{ Text="PALM", Value = "4" },
-                                                    }, new { multiple = "multiple"  })
+                                        {
+                                        new SelectListItem{ Text="Smart", Value = "1" },
+                                        new SelectListItem{ Text="QA", Value = "2" },
+                                        new SelectListItem{ Text="SESM", Value = "3" },
+                                        new SelectListItem{ Text="PALM", Value = "4" },
+                                        }, new { multiple = "multiple" })
+
+                            @*@Html.ListBoxFor(model => model.ProjectIDs, new MultiSelectList(Models.GetCategoryList().OrderBy(c => c.Value), "Key", "Value", Model.SelectedValues), "Select Category", new { @class = "chzn-select form-control", multiple = "multiple" })*@
                         </div>
                     </div>
                 </div>
@@ -93,7 +95,7 @@
                     <div class="row">
                         <label class="control-label col-md-2 text-left">DOB :</label>
                         <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.DOB, "", new { @class = "form-control ui-datepicker-calendar", id = "datepicker", maxlength = "100", @readonly = true })
+                            @Html.TextBoxFor(m => m.DOB, "", new { @class = "form-control ui-datepicker-calendar", id = "txtDOB", @readonly = true })
                         </div>
                     </div>
                 </div>
@@ -101,8 +103,8 @@
                     <div class="row">
                         <label class="control-label col-md-2 text-left">Date Of Joining :</label>
                         <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.JoiningDate, "", new { @class = "form-control ui-datepicker-calendar", id = "datepicker", maxlength = "100", @readonly = true })
-                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.JoiningDate, "", new { @class = "form-control ui-datepicker-calendar", id = "txtDOJ", @readonly = true })
+                        
                         </div>
                     </div>
                 </div>
@@ -130,7 +132,7 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
+                        <input type="submit" value="Save" class="btn btn-default" formaction="SaveData" formmethod="post" />
                     </div>
                 </div>
                 @*</div>*@
@@ -144,9 +146,9 @@
 
 }
 
-<div>
+@*<div>
     @Html.ActionLink("Back to List", "Index")
-</div>
+</div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
@@ -158,7 +160,32 @@
 
         $('#ddlProject').multiselect({
            
-            includeSelectAllOption: true
+            includeSelectAllOption: true,
+            onSelectAll: function () {
+                var brands = $('#ddlProject option:selected');
+                var Allselected = [];
+
+
+                $(brands).each(function (index, brand) {
+                    Allselected.push([$(this).val()]);
+                });
+
+                console.log(Allselected);
+            },
+            onDeselectAll: function () {
+                console.log("deselect-all-nonreq");
+            },
+            onChange: function (element, checked) {
+                var brands = $('#ddlProject option:selected');
+                var selected = [];
+
+               
+                $(brands).each(function (index, brand) {
+                    selected.push([$(this).val()]);
+                });
+
+                console.log(selected);
+            }
 
             });
         

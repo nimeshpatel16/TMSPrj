@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TMS.DataAccessLayer.CommonInterface;
+using TaskManagementSystem.Models.CustomClass;
 
 namespace TaskManagementSystem.Controllers
 {
@@ -14,6 +15,7 @@ namespace TaskManagementSystem.Controllers
         {
             _iresource = resource;
         }
+        
         // GET: Resource
         public ActionResult Index()
         {
@@ -30,6 +32,23 @@ namespace TaskManagementSystem.Controllers
         public ActionResult AddResource()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ActionName("SaveData")]
+        public ActionResult SaveRecords(ResourceModel model)
+        {
+            try
+            {
+                
+
+                return View("AddResource");
+
+            }
+            catch
+            {
+                return View("AddResource");
+            }
         }
 
         public ActionResult GetAllResource()
