@@ -1,0 +1,232 @@
+﻿@model IEnumerable<TMS.DataTransferObject.DTOResource>
+
+@{
+    ViewBag.Title = "GetAllResource";
+    Layout = "~/Views/Shared/_DashboardLayoutPage.cshtml";
+}
+
+<h2>GetAllResource</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ResourceID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResourceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoiningDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResourceIDs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Search_PageIndex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Search_PageSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalRowCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectIDs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectNames)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.@startdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.@enddate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalLeave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarryForwardedLeave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InactiveDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HidedenTotalLeave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HidedenCarryForwardedLeave)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResourceID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResourceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JoiningDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResourceIDs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Search_PageIndex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Search_PageSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalRowCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectIDs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectNames)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.@startdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.@enddate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalLeave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarryForwardedLeave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InactiveDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HidedenTotalLeave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HidedenCarryForwardedLeave)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TMS.DataAccessLayer.CommonInterface;
 
 namespace TaskManagementSystem.Controllers
 {
     public class ResourceController : Controller
     {
+        IResource _iresource;
+        public ResourceController(IResource resource)
+        {
+            _iresource = resource;
+        }
         // GET: Resource
         public ActionResult Index()
         {
@@ -26,6 +32,10 @@ namespace TaskManagementSystem.Controllers
             return View();
         }
 
+        public ActionResult GetAllResource()
+        {
+            return View();
+        }
         // POST: Resource/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
