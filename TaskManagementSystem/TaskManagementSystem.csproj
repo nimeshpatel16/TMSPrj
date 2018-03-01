@@ -725,6 +725,7 @@
     <Content Include="Views\Leave\ViewLyubomir.cshtml" />
     <Content Include="Views\Resource\AddResource.cshtml" />
     <Content Include="Views\Resource\GetAllResource.cshtml" />
+    <Content Include="Views\Resource\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

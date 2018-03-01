@@ -53,24 +53,28 @@ namespace TaskManagementSystem.Controllers
 
         public ActionResult GetAllResource()
         {
-            return View();
+            return View(_iresource.GetResouceList());
         }
         // POST: Resource/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            //try
+            //{
+            //    // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+            return View();
         }
-
+       public ActionResult Create()
+        {
+            return View();
+        }
         // GET: Resource/Edit/5
         public ActionResult Edit(int id)
         {

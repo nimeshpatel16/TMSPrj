@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace TMS.DataTransferObject
 {
@@ -12,6 +14,8 @@ namespace TMS.DataTransferObject
         {
         }
         public Int64 ResourceID { get; set; }
+        [Required]
+        [StringLength(10,ErrorMessage ="length must be lessthen 10")]
         public string ResourceName { get; set; }
         public string Password { get; set; }
         public string FirstName { get; set; }
