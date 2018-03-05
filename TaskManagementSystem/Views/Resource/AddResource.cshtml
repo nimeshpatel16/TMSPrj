@@ -16,7 +16,7 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4>Add/Update Resource Details Leave</h4>
+                <h4>Add/Update Resource Details</h4>
                 <hr />
             </div>
             <div class="panel-body">
@@ -62,6 +62,7 @@
                         <div class="col-md-10">
                             @Html.DropDownList("ddlRole", new List<SelectListItem>
                                                     {
+                                                    new SelectListItem{ Text="--- Select One ---", Value = "0" },
                                                     new SelectListItem{ Text="Admin", Value = "1" },
                                                     new SelectListItem{ Text="Lead", Value = "2" },
                                                     new SelectListItem{ Text="Developer", Value = "3" },
@@ -133,6 +134,7 @@
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Save" class="btn btn-default" formaction="SaveData" formmethod="post" />
+                        <input type="submit" value="Clear" class="btn btn-default" formaction="ClearData" formmethod="post" />
                     </div>
                 </div>
                 @*</div>*@

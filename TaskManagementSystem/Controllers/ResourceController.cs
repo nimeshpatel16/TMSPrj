@@ -35,6 +35,16 @@ namespace TaskManagementSystem.Controllers
         }
 
         [HttpPost]
+        [ActionName("ClearData")]
+        public ActionResult ClearData(ResourceModel model)
+        {
+
+            ModelState.Clear();
+            return View("AddResource");
+
+        }
+
+        [HttpPost]
         [ActionName("SaveData")]
         public ActionResult SaveRecords(ResourceModel model)
         {
