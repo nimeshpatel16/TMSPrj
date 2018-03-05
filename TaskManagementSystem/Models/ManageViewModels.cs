@@ -14,6 +14,8 @@ namespace TaskManagementSystem.Models
         public bool BrowserRemembered { get; set; }
     }
     //ManageView
+    //TEsting comment
+    //TEsting comment
     public class ManageLoginsViewModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
