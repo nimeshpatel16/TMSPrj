@@ -1,4 +1,15 @@
-Important URL
+1 ) What are the advantages of ASP.NET MVC?
 
-http://joelabrahamsson.com/a-simple-example-of-the-openclosed-principle/ 
-https://stackoverflow.com/questions/42667928/vs-2017-git-failed-with-a-fatal-error 
+Extensive support for TDD. With asp.net MVC, views can also be very easily unit tested.
+Complex applications can be easily managed
+Seperation of concerns. Different aspects of the application can be divided into Model, View and Controller.
+ASP.NET MVC views are light weight, as they donot use viewstate.
+
+2)What is the role of a controller in an MVC application?
+The controller responds to user interactions, with the application, 
+by selecting the action method to execute and alse selecting the view to render.
+
+3) What is the significance of ASP.NET routing?
+ASP.NET MVC uses ASP.NET routing, to map incoming browser requests to controller action methods. 
+ASP.NET Routing makes use of route table. Route table is created when your web application first starts. 
+The route table is present in the Global.asax file.
